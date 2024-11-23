@@ -14,7 +14,9 @@
 	--background: #f3f3f3;
 	--black: #1f1f1f;
 	--no: #ff5e5e;
+	--notransparent: rgba(255, 94, 94, 0.6);
 	--yes: #67ff94;
+	--yestransparent: rgba(103, 255, 148, 0.6);
 }
 body > div {
 	background-color: var(--background);
@@ -84,4 +86,30 @@ img {
 	justify-content: center;
 	flex-direction: column;
 	font-size: 3.5vmin;
+}
+#no:hover {
+	transition-property: background;
+	transition-duration: 500ms;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	background: var(--no);
+	background: linear-gradient(90deg, var(--no) 0%, var(--notransparent) 100%);
+}
+#yes:hover {
+	transition-property: background;
+	transition-duration: 500ms;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	background: var(--yes);
+	background: linear-gradient(90deg, var(--yestransparent) 0%, var(--yes) 100%);
+}
+.correct {
+	transition-property: background;
+	transition-duration: 100ms;
+	transition-timing-function: linear;
+	background: var(--yestransparent);
+}
+.wrong {
+	transition-property: background;
+	transition-duration: 100ms;
+	transition-timing-function: linear;
+	background: var(--notransparent);
 }

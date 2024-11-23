@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		return sum;
 	}
 	function startround() {
+		document.getElementById("cards").classList.remove(...document.getElementById("cards").classList);
 		document.getElementById("score").innerHTML = "Score: " + score;
 		if (games !== 0) {
 			document.getElementById("average").innerHTML = "Average: " + (score / games).toFixed(0);
@@ -65,8 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			let t2 = new Date();
 			if (s !== 15) {
 				score += 10000 - t2.getMilliseconds() - t.getMilliseconds();
+				document.getElementById("cards").classList.add("correct");
 			} else {
 				score -= 50000 - t2.getMilliseconds() - t.getMilliseconds();
+				document.getElementById("cards").classList.add("wrong");
 			}
 			setTimeout(startround, 100);
 		}
@@ -77,8 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			let t2 = new Date();
 			if (s === 15) {
 				score += 10000 - t2.getMilliseconds() - t.getMilliseconds();
+				document.getElementById("cards").classList.add("correct");
 			} else {
 				score -= 50000 - t2.getMilliseconds() - t.getMilliseconds();
+				document.getElementById("cards").classList.add("wrong");
 			}
 			setTimeout(startround, 100);
 		}
@@ -90,8 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				let t2 = new Date();
 				if (s !== 15) {
 					score += 10000 - t2.getMilliseconds() - t.getMilliseconds();
+					document.getElementById("cards").classList.add("correct");
 				} else {
 					score -= 50000 - t2.getMilliseconds() - t.getMilliseconds();
+					document.getElementById("cards").classList.add("wrong");
 				}
 				setTimeout(startround, 100);
 			}
@@ -100,8 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				let t2 = new Date();
 				if (s == 15) {
 					score += 10000 - t2.getMilliseconds() - t.getMilliseconds();
+					document.getElementById("cards").classList.add("correct");
 				} else {
 					score -= 50000 - t2.getMilliseconds() - t.getMilliseconds();
+					document.getElementById("cards").classList.add("wrong");
 				}
 				setTimeout(startround, 100);
 			}
