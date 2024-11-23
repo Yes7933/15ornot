@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					suit: suits[i],
 					face: faces[j],
 					value: values[j],
-					image: "/img/card" + suits[i] + faces[j] + ".png",
+					image: "/15ornot/img/card" + suits[i] + faces[j] + ".png",
 				});
 			}
 		}
